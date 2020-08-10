@@ -15,6 +15,7 @@ const Data = () => {
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
 
+
     const getCoinData = async () => {
         try {
             const data = await axios.get('https://api.coinpaprika.com/v1/tickers')
@@ -32,7 +33,7 @@ const Data = () => {
     const columns = [
         {dataField: "rank", text: "Rank", sort: true, headerStyle: () => {return { width: "60px" }}, align: 'right' },
         {dataField: "name", filter: textFilter({placeholder: 'Enter Coin Name'})},
-        {dataField: "symbol", text: "Symbol"},
+        {dataField: "symbol", text: "Symbol", headerStyle: () => {return { width: "125px" }}},
         {dataField: "quotes.USD.price", text: "Price", align: 'right'},
         {dataField: "quotes.USD.percent_change_24h", text: "Price 24h %", sort: true, align: 'right'},
         {dataField: "quotes.USD.market_cap", text: "Marketcap", sort: true, align: 'right'}
@@ -101,9 +102,9 @@ const Data = () => {
 
     return (
         <>
-            <div style={{height:'40vh', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', width:'1005'}}>
+            <div style={{minHeight:'40vh', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', width:'1005'}}>
                 <h2>SEARCH COINS</h2>
-                <p>click on coin for more info</p>
+                <p>click on coin for more info</p>   
             </div>
 
             <BootStrapTable 
