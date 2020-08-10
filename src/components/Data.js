@@ -30,9 +30,9 @@ const Data = () => {
     }, [])
 
     const columns = [
-        {dataField: "rank", text: "Rank", sort: true, headerStyle: () => {return { width: "5%" }}, align: 'right' },
+        {dataField: "rank", text: "Rank", sort: true, headerStyle: () => {return { width: "60px" }}, align: 'right' },
         {dataField: "name", filter: textFilter()},
-        {dataField: "symbol", filter: textFilter()},
+        {dataField: "symbol", text: "Symbol"},
         {dataField: "quotes.USD.price", text: "Price", align: 'right'},
         {dataField: "quotes.USD.percent_change_24h", text: "Price 24h %", sort: true, align: 'right'},
         {dataField: "quotes.USD.market_cap", text: "Marketcap", sort: true, align: 'right'}
@@ -62,8 +62,10 @@ const Data = () => {
         const style = {};
         if (row.quotes.USD.percent_change_24h > 0) {
             style.background = '#f0fff0';
-        } else {
+        } else if (row.quotes.USD.percent_change_24h < 0) {
             style.background = '#fff0f0';
+        } else {
+            style.background = 'white'
         }
         
         return style;
@@ -73,7 +75,7 @@ const Data = () => {
         return (
             <Modal show={show} onHide={handleClose}>
 
-                <Modal.Header closeButton  style={modalInfo.quotes.USD.percent_change_24h > 0 ?  {background:'#f0fff0'} : {background:'#fff0f0'}}>
+                <Modal.Header closeButton  style={modalInfo.quotes.USD.percent_change_24h > 0 ? {background:'#f0fff0'} : {background:'#fff0f0'}}>
                     <Modal.Title>{modalInfo.name}</Modal.Title>
                 </Modal.Header>
 
