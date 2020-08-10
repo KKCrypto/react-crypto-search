@@ -31,7 +31,7 @@ const Data = () => {
 
     const columns = [
         {dataField: "rank", text: "Rank", sort: true, headerStyle: () => {return { width: "60px" }}, align: 'right' },
-        {dataField: "name", filter: textFilter()},
+        {dataField: "name", filter: textFilter({placeholder: 'Enter Coin Name'})},
         {dataField: "symbol", text: "Symbol"},
         {dataField: "quotes.USD.price", text: "Price", align: 'right'},
         {dataField: "quotes.USD.percent_change_24h", text: "Price 24h %", sort: true, align: 'right'},

@@ -5,9 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background: #7db9e8;
+background: -moz-linear-gradient(top,  #7db9e8 1%, #e1efff 46%);
+background: -webkit-linear-gradient(top,  #7db9e8 1%,#e1efff 46%);
+background: linear-gradient(to bottom,  #7db9e8 1%,#e1efff 46%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#e1efff',GradientType=0 ); */
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+div.row.react-bootstrap-table-pagination {
+  margin-left: auto;
 }
