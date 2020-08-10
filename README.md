@@ -1,4 +1,6 @@
 Dynamic React BootsTrap table with search and pagination
+
+DEMO:
 https://kkcrypto.github.io/react-crypto-search/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
